@@ -5,7 +5,7 @@ const apiKey = process.env.GPT_TOKEN;
 const command = "!gpt ";
 
 module.exports = async function (msg, args) {
-  var response = "Response not defined";
+  var response = "STP, écris une question ou demande une histoire.";
 
   // if (args) {
   //   if (args[0] == "getModels") {
@@ -18,10 +18,15 @@ module.exports = async function (msg, args) {
 
   const prompt = msg.content.slice(command.length);
 
-  response = await getChatGPTResponse(prompt);
+  if (prompt) {
+    response = await getChatGPTResponse(prompt);
+    //msg.channel.send(response);
+    
+  }
 
-  //msg.channel.send(response);
   msg.reply(response);
+
+  
 }
 
 async function getModels() {

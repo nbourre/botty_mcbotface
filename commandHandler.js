@@ -3,12 +3,12 @@ const chan_test_id = '801899863183720479';
 
 const dice = require("./commands/dice.js");
 const ping = require("./commands/ping.js");
-const getUsers = require("./commands/getUsers.js");
+const gpt = require("./commands/gpt.js");
 
 const commands = {
   ping,
   dice,
-  getUsers,
+  gpt,
 };
 
 module.exports = async function (message) {

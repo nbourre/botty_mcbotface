@@ -2,6 +2,7 @@ require("dotenv").config();
 
 const Discord = require("discord.js");
 const config = require("./config.json");
+const axios = require('axios');
 
 const commandHandler = require("./commandHandler");
 

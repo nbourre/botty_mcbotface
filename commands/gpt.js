@@ -2,18 +2,24 @@ const axios = require('axios');
 
 const endpoint = "https://api.openai.com/v1/completions";
 const apiKey = process.env.GPT_TOKEN;
+const command = "!gpt ";
 
 module.exports = async function (msg, args) {
+  var response = "Response not defined";
 
-  if (args) {
-    if (args[0] == "getModels") {
+  // if (args) {
+  //   if (args[0] == "getModels") {
+  //     response = await getModels();
+  //   }
+  //   else {
 
-    }
-  }
+  //   }
+  // }
 
-  const prompt = msg.content.slice(5);
+  const prompt = msg.content.slice(command.length);
 
-  const response = await getChatGPTResponse(prompt);
+  response = await getChatGPTResponse(prompt);
+
   //msg.channel.send(response);
   msg.reply(response);
 }
@@ -24,7 +30,7 @@ async function getModels() {
     'Authorization': `Bearer ${apiKey}`,
   };
 
-  const response = await axios.get("https://api.openai.com/v1/models");
+  const response = await axios.get("https://api.openai.com/v1/models", {headers: headers});
 
   return response.data.text;
 }

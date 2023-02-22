@@ -6,6 +6,6 @@ module.exports = async function (msg, args) {
 
     const response = await axios.get(`https://wttr.in/Shawinigan?M&lang=fr`);
 
-    msg.reply(response.data); 
+    msg.reply("response.data"); 
 }
   

@@ -4,11 +4,13 @@ const chan_test_id = '801899863183720479';
 const dice = require("./commands/dice.js");
 const ping = require("./commands/ping.js");
 const gpt = require("./commands/gpt.js");
+const meteo = require("./commands/meteo.js");
 
 const commands = {
   ping,
   dice,
   gpt,
+  meteo,
 };
 
 module.exports = async function (message) {

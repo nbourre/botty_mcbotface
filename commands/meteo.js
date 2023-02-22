@@ -4,7 +4,7 @@ const axios = require('axios');
 // axios wttr.in/Shawinigan?M&lang=fr
 module.exports = async function (msg, args) {
 
-    const response = await axios.get(`https://wttr.in/Shawinigan?M&lang=fr`);
+    //const response = await axios.get(`https://wttr.in/Shawinigan?M&lang=fr`);
 
     msg.reply("response.data"); 
 }

@@ -15,6 +15,6 @@ module.exports = async function (msg, args) {
         return;
     }   
 
-    msg.reply(response.data); 
+    msg.reply("```" + response.data + "```"); 
 }
   

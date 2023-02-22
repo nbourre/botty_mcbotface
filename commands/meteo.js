@@ -6,6 +6,6 @@ module.exports = async function (msg, args) {
     const endpoint = "https://wttr.in/Shawinigan?M&lang=fr";
     const response = await axios.get(endpoint);
 
-    msg.reply(response.data); 
+    msg.reply("response.data"); 
 }
   
